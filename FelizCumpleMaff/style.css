@@ -1,0 +1,637 @@
+/* ==========================================
+   IMPORTAR FUENTE
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root{
+
+    --rosa:#ff4d88;
+    --rosa2:#ff8fb3;
+    --rosa3:#ffd6e5;
+    --blanco:#ffffff;
+    --texto:#3d3d3d;
+    --glass:rgba(255,255,255,.18);
+    --glassBorder:rgba(255,255,255,.35);
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    color:var(--texto);
+
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #fff0f6,
+        #ffe1ec,
+        #ffd8e8,
+        #ffeef6
+    );
+
+    background-size:400% 400%;
+
+    animation:fondo 18s ease infinite;
+
+}
+
+/* ==========================================
+   FONDO ANIMADO
+========================================== */
+
+@keyframes fondo{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+/* ==========================================
+   ESTRELLAS
+========================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background-image:
+
+radial-gradient(circle,#ffffff 1px,transparent 1px),
+radial-gradient(circle,#ffffff80 1px,transparent 1px);
+
+background-size:
+
+70px 70px,
+120px 120px;
+
+animation:stars 70s linear infinite;
+
+opacity:.4;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+@keyframes stars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(900px);
+
+}
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+position:relative;
+
+}
+
+/* ==========================================
+   TITULO
+========================================== */
+
+.hero h1{
+
+font-size:4rem;
+
+font-family:'Great Vibes',cursive;
+
+color:var(--rosa);
+
+margin-bottom:20px;
+
+text-shadow:
+
+0 0 20px rgba(255,90,150,.35);
+
+animation:zoom 1.5s;
+
+}
+
+@keyframes zoom{
+
+from{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================================
+   SUBTITULO
+========================================== */
+
+.hero p{
+
+font-size:1.3rem;
+
+max-width:650px;
+
+line-height:35px;
+
+margin-bottom:45px;
+
+color:#555;
+
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+button{
+
+padding:18px 42px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:600;
+
+background:linear-gradient(
+
+90deg,
+
+#ff4d88,
+
+#ff7ba8
+
+);
+
+color:white;
+
+transition:.35s;
+
+box-shadow:
+
+0 15px 35px rgba(255,77,136,.35);
+
+}
+
+button:hover{
+
+transform:
+
+translateY(-5px)
+scale(1.05);
+
+box-shadow:
+
+0 20px 45px rgba(255,77,136,.45);
+
+}
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+section{
+
+width:min(1100px,92%);
+
+margin:auto;
+
+margin-top:100px;
+
+padding:60px;
+
+background:var(--glass);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+border:1px solid var(--glassBorder);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.08);
+
+animation:aparecer linear;
+
+animation-timeline:view();
+
+animation-range:entry 10% cover 30%;
+
+}
+
+/* ==========================================
+   TITULOS
+========================================== */
+
+section h2{
+
+font-size:2.6rem;
+
+font-family:'Great Vibes',cursive;
+
+text-align:center;
+
+color:var(--rosa);
+
+margin-bottom:35px;
+
+}
+
+/* ==========================================
+   PARRAFOS
+========================================== */
+
+section p{
+
+font-size:18px;
+
+line-height:38px;
+
+text-align:justify;
+
+}
+
+/* ==========================================
+   ANIMACION SCROLL
+========================================== */
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+transform:translateY(100px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*=========================
+    ALBUM DE FOTOS
+==========================*/
+
+.album{
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    padding:50px;
+
+    box-shadow:0 20px 50px rgba(255,105,180,.15);
+
+}
+
+.subtitulo{
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:20px;
+
+    margin-bottom:40px;
+
+}
+
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    justify-items:center;
+
+    align-items:center;
+
+}
+
+.foto{
+
+    position:relative;
+
+    width:220px;
+
+    transition:.4s;
+
+}
+
+.foto img{
+
+    width:220px;
+
+    height:300px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:18px;
+
+    border:8px solid white;
+
+    background:white;
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.18);
+
+    transition:.4s;
+
+}
+
+.foto:hover{
+
+    transform:
+
+    translateY(-10px)
+
+    scale(1.04);
+
+}
+
+.foto:hover img{
+
+    box-shadow:
+
+    0 20px 45px rgba(255,80,130,.35);
+
+}
+
+.numero{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-18px;
+
+    transform:translateX(-50%);
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:#ff4d88;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    font-size:17px;
+
+    box-shadow:0 8px 20px rgba(255,80,130,.45);
+
+}
+
+.galeria img{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    animation:mostrarFoto .8s forwards;
+
+}
+
+@keyframes mostrarFoto{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================
+        FOOTER
+=========================*/
+
+.footer-romantico{
+
+    margin-top:80px;
+
+    padding:70px 20px;
+
+    text-align:center;
+
+}
+
+.footer-romantico h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    color:#ff4d88;
+
+    margin:25px 0;
+
+}
+
+.footer-romantico p{
+
+    color:#777;
+
+    font-size:22px;
+
+    margin-top:15px;
+
+}
+
+.linea-corazones{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.linea-corazones span{
+
+    font-size:34px;
+
+    animation:latido 1.8s infinite;
+
+}
+
+.linea-corazones span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.linea-corazones span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+.linea-corazones span:nth-child(4){
+
+    animation-delay:.6s;
+
+}
+
+.linea-corazones span:nth-child(5){
+
+    font-size:55px;
+
+}
+
+.linea-corazones span:nth-child(6){
+
+    animation-delay:.8s;
+
+}
+
+.linea-corazones span:nth-child(7){
+
+    animation-delay:1s;
+
+}
+
+.linea-corazones span:nth-child(8){
+
+    animation-delay:1.2s;
+
+}
+
+.linea-corazones span:nth-child(9){
+
+    animation-delay:1.4s;
+
+}
+
+@keyframes latido{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.25);
+
+}
+
+}
